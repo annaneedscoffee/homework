@@ -6,6 +6,6 @@ public class HttpService {
     }
     public static void main(String[] args){
 
-        handleHttpCode(69);
+        handleHttpCode(200);
     }
 }

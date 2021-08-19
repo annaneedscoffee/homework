@@ -1,20 +1,18 @@
 package enumlab;
 
 public enum Http {
-    INFORMATIONAL(100,199), SUCCESS(200,299), REDIRECTION(300,399), CLIENT_ERROR(400,499), SERVER_ERROR(500,599);
+    INFORMATIONAL(1), SUCCESS(2), REDIRECTION(3), CLIENT_ERROR(4), SERVER_ERROR(5);
 
-    private final int minCode;
-    private final int maxCode;
+    private final int code;
 
-    Http(int minCode, int maxCode) {
-        this.minCode = minCode;
-        this.maxCode = maxCode;
+    Http(int code) {
+        this.code = code;
     }
 
     static  public String handler(int code){
         Http[] https = values();
         for(Http http : https){
-            if (code >= http.minCode && code <=http.maxCode){
+            if (code/100 == http.code){
                 return "Code category: "+http.toString();
             }
         }
