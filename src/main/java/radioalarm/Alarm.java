@@ -2,8 +2,8 @@ package radioalarm;
 
 public interface Alarm {
 
-    public void c();
+    void c();
 
-    public void d();
+    void d();
 
 }
